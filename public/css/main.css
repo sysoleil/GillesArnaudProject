@@ -1,0 +1,414 @@
+@charset "UTF-8";
+.titleCourse {
+  font-family: Trattatello, arial, sans-serif;
+  color: #422ED9;
+  font-size: 30px;
+  padding: 7%;
+  text-align: center;
+}
+
+.headCourse {
+  padding-top: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.coursesClass {
+  width: 20%;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.img {
+  transition: all 1s ease;
+}
+
+.imgResp {
+  width: 100%;
+  height: 300px;
+}
+
+.backCenter {
+  font-family: "Helvetica Neue", arial;
+  background-color: #850C35;
+  color: whitesmoke;
+  font-size: 16px;
+  height: 50px;
+  width: 200px;
+  margin: 2rem;
+  text-align: center;
+}
+
+.titleCourseType {
+  font-family: Trattatello, arial, sans-serif;
+  color: #422ED9;
+  font-size: 30px;
+  padding-top: 30%;
+}
+
+.titleCourseTypeBis {
+  font-family: "Helvetica Neue", arial;
+  color: #422ED9;
+  font-size: 24px;
+  padding-top: 30%;
+}
+
+.inputTitle, .inputDescription, .inputPrice, .inputMinPerson, .inputMaxPerson,
+.inputPriceCe, .inputDuration, .inputTicket, .inputPhoto, .inputAlt {
+  font-size: 20px;
+  color: #005B34;
+}
+
+.formulaire {
+  width: 50%;
+  text-align: left;
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #850C35;
+}
+
+.head {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../img/panorama.png);
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.headLittle {
+  height: content-box;
+  width: 100%;
+  background-image: url(../img/panorama.png);
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.filtreHeader {
+  height: 85vh;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(200, 200, 200, 0.65);
+}
+
+.logo {
+  position: absolute;
+  height: 15vh;
+  z-index: 400;
+}
+
+.logoLittle {
+  position: relative;
+  height: 15vh;
+  z-index: 400;
+  width: 30%;
+}
+
+.logochild {
+  width: 50%;
+  margin-left: 40px;
+}
+
+.logochildLittle {
+  height: 10vh;
+  margin-left: 40px;
+}
+
+.items {
+  height: 10vh;
+  width: 100%;
+  z-index: 50;
+  position: fixed;
+}
+
+.itemsLittle {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(230, 230, 230, 0.5);
+  height: 10vh;
+  width: 100%;
+  z-index: 50;
+  position: fixed;
+}
+
+.navContainer {
+  display: flex;
+  float: right;
+  margin-right: 30px;
+  padding-top: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 0 0 15px 15px;
+}
+
+.nav {
+  margin: 5px 25px 0 0;
+  list-style-type: none;
+  font-size: 20px;
+  color: #422ED9;
+}
+
+.nav:hover {
+  font-size: xx-large;
+}
+
+.titleHeader {
+  height: 85vh;
+  font-family: Trattatello, arial, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  color: #005B34;
+  text-align: center;
+  padding-top: 170px;
+}
+
+.headerBottom {
+  height: 8vh;
+  background-color: #850C35;
+  font-family: Trattatello, arial, sans-serif;
+}
+
+.headerBottomP {
+  color: whitesmoke;
+  float: right;
+  font-size: 40px;
+  padding-right: 40px;
+}
+
+body {
+  background: whitesmoke;
+}
+
+.sectionOneHomePage {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px;
+}
+
+.imgSectionOneHomePage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.pSectionOneHomePage {
+  width: 60%;
+  color: #850C35;
+  font-size: 20px;
+  text-align: justify;
+}
+
+.sectionHomePageCarousel {
+  text-align: center;
+}
+
+.titleHomePageCarousel {
+  margin: 50px 550px 10px;
+  color: #422ED9;
+  font-size: 35px;
+}
+
+.imgSectionHomePageCarousel {
+  height: 300px;
+}
+
+div#carousel {
+  perspective: 1200px;
+  background: whitesmoke;
+  padding: 5% 14%;
+  font-size: 0;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+figure#spinner {
+  transform-style: preserve-3d;
+  height: 300px;
+  transform-origin: 50% 50% -500px;
+  transition: 1s;
+}
+
+figure#spinner img {
+  width: 40%;
+  max-width: 425px;
+  position: absolute;
+  left: 30%;
+  transform-origin: 50% 50% -500px;
+  outline: 1px solid transparent;
+}
+
+figure#spinner img:nth-child(1) {
+  transform: rotateY(0deg);
+}
+
+figure#spinner img:nth-child(2) {
+  transform: rotateY(-45deg);
+}
+
+figure#spinner img:nth-child(3) {
+  transform: rotateY(-90deg);
+}
+
+figure#spinner img:nth-child(4) {
+  transform: rotateY(-135deg);
+}
+
+figure#spinner img:nth-child(5) {
+  transform: rotateY(-180deg);
+}
+
+figure#spinner img:nth-child(6) {
+  transform: rotateY(-225deg);
+}
+
+figure#spinner img:nth-child(7) {
+  transform: rotateY(-270deg);
+}
+
+figure#spinner img:nth-child(8) {
+  transform: rotateY(-315deg);
+}
+
+div#carousel ~ span {
+  color: black;
+  margin: 5%;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: 0.6s color;
+  position: relative;
+  margin-top: -16rem;
+  border-bottom: none;
+  line-height: 0;
+}
+
+div#carousel ~ span:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+.sectionThreeHomePage {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto;
+}
+
+.imgSectionThreeHomePage {
+  width: 80%;
+  padding-left: 35px;
+}
+
+.pSectionThreeHomePage {
+  width: 100%;
+  padding: 100px 70px 50px 30px;
+  color: #850C35;
+  font-size: 20px;
+  text-align: justify;
+}
+
+.titlePlanning {
+  font-size: 35px;
+  color: #422ED9;
+  transform: rotate(-40deg);
+  /* Équivalent à rotateZ(-45deg) */
+}
+
+div#carousel2 {
+  perspective: 1200px;
+  background: whitesmoke;
+  padding: 5% 14%;
+  font-size: 0;
+  margin-bottom: 4rem;
+  overflow: hidden;
+}
+
+figure#spinner2 {
+  transform-style: preserve-3d;
+  height: 300px;
+  transform-origin: 50% 50% -500px;
+  transition: 1s;
+}
+
+figure#spinner2 img {
+  width: 40%;
+  max-width: 425px;
+  position: absolute;
+  left: 30%;
+  transform-origin: 50% 50% -500px;
+  outline: 1px solid transparent;
+}
+
+figure#spinner2 img:nth-child(1) {
+  transform: rotateY(0deg);
+}
+
+figure#spinner2 img:nth-child(2) {
+  transform: rotateY(-45deg);
+}
+
+figure#spinner2 img:nth-child(3) {
+  transform: rotateY(-90deg);
+}
+
+figure#spinner2 img:nth-child(4) {
+  transform: rotateY(-135deg);
+}
+
+figure#spinner2 img:nth-child(5) {
+  transform: rotateY(-180deg);
+}
+
+figure#spinner2 img:nth-child(6) {
+  transform: rotateY(-225deg);
+}
+
+figure#spinner2 img:nth-child(7) {
+  transform: rotateY(-270deg);
+}
+
+figure#spinner2 img:nth-child(8) {
+  transform: rotateY(-315deg);
+}
+
+div#carousel2 ~ span {
+  color: black;
+  margin: 5%;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: 0.6s color;
+  position: relative;
+  margin-top: -18rem;
+  border-bottom: none;
+  line-height: 0;
+}
+
+div#carousel2 ~ span:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+.cadre {
+  background-color: #850C35;
+  line-height: 60px;
+  font-family: "Helvetica Neue", arial;
+  color: whitesmoke;
+  text-align: center;
+}
+
+/*# sourceMappingURL=main.css.map */

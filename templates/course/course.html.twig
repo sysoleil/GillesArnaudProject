@@ -1,0 +1,50 @@
+{% extends 'commons/base.html.twig' %}
+    {% block body %}
+        {% include 'commons/_headerLittle.html.twig' %}
+        <h1 class="titleCourse"> MES SERVICES</h1>
+            {# {% if is_granted("ROLE_ADMIN") %} #}
+            <a class="insertCourse">créer un cours</a>
+            {# {% endif %} #}
+        <div class="row">
+            {% for course in courses %}
+                <div class="container-fluid">
+                    <h2> {{ course.name }} </h2>
+                    <div class="row row-cols-3 row-cols-sm-2 row-cols-md-1">
+                        <div class="col col-sm-8 col-md-6 col-lg-6 courses">
+                            <img src="{{ asset('upload_directory/' ~ course.photo) }}">
+                            <div class="courses">
+                                {# {% if is_granted("ROLE_ADMIN") %} #}
+                                    <a href="{{ path('course_delete',{'id':course.id}) }}">
+                                        supprimer
+                                    </a>
+                                        <br>
+                                    <a href="{{ path('course_update',{'id':course.id}) }}">
+                                        modifier
+                                    </a>
+                                {# {% endif %} #}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+{#        <div class="container-fluid">
+            <div class="row row-cols-3 row-cols-sm-2 row-cols-md-1">
+                <div class="col col-sm-8 col-md-6 col-lg-6 courses">
+                    <img src="{{ asset('img/golfeur.jpg') }}" alt="cours de golf" class="imgResp">
+                </div>
+                <div class="col col-sm-8 col-md-6 col-lg-6 courses">
+                    <img src="{{ asset('img/stage2.jpeg') }}" alt="cours de golf" class="imgResp">
+                </div>
+                <div class="col col-sm-8 col-md-6 col-lg-6 courses">
+                    <img src="{{ asset('img/carte_verte.jpg') }}" alt="cours de golf" class="imgResp">
+                </div>
+                <div class="col col-sm-8 col-md-6 col-lg-6 courses">
+                    <img src="{{ asset('img/chateaux.jpeg') }}" alt="cours de golf" class="imgResp">
+                </div>
+            </div>
+        </div> #}
+
+            {% endfor %}
+        </div>
+        <button class="backCenter"><a href="{{ path('home') }}">Retour à l'accueil</a></button>
+    {% endblock %}
