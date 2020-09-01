@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -19,11 +20,13 @@ class User
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\NotBlank(message = "Vous devez obligatoirement compléter ce champ")
      */
     private $firstName;
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\NotBlank(message = "Vous devez obligatoirement compléter ce champ")
      */
     private $lastName;
 
@@ -33,12 +36,14 @@ class User
     private $level;
 
     /**
-     * @ORM\Column(type="string", length=1)
+     * @ORM\Column(type="string", length=5)
      */
     private $sexe;
 
     /**
      * @ORM\Column(type="string", length=30)
+     * @Assert\Email(message = "Cet email '{{ value }}' n'est pas valide.")
+     * @Assert\NotBlank(message = "Une adresse mail est obligatoire.")
      */
     private $email;
 
@@ -59,6 +64,10 @@ class User
 
     /**
      * @ORM\Column(type="string", length=20)
+     * @Assert\Length(min="6", max="20",
+     *     minMessage="Votre mot de passe doit comporter au moins de 6 caractères",
+     *     maxMessage="Votre mot de passe ne doit pas comporter plus de 20 caractères")
+     * @Assert\NotBlank(message = "Un mot de passe est obligatoire")
      */
     private $password;
 

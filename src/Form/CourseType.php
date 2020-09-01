@@ -31,7 +31,7 @@ class CourseType extends AbstractType
             ->add('ticket', ChoiceType::class,[
                 'choices' => [
                     'Oui' => true,
-                    'Non' => false,]])
+                    'Non' => false]])
             ->add('photo', FileType::class, [
                 'label'=> 'Photo',
                 'mapped'=> false])

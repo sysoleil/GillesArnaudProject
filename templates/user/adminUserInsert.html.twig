@@ -1,10 +1,8 @@
 {% extends 'commons/base.html.twig' %}
-{% block title %}Création cours{% endblock %}
+{% block title %}Créer compte{% endblock %}
     {% block body %}
         {% include 'commons/_headerLittle.html.twig' %}
         <h1 class="titleCourse"> Créer un compte</h1>
-{#       <div>
-            {{ form(courseForm) }} #}
 
         {# Pour décomposer mon formulaire j'utilise les fonctions form_start() et form_end.
         qui balisent mon formulaire. Ensuite en fonction des champs j'utilise form_widget() et form_label().
@@ -28,7 +26,7 @@
 
             Ensuite je vrais créer dans mon créé @Assert et je mets la contrainte que je souhaite afficher #}
 
-            <div> {{ form_label(userForm.lastName) }}<br>
+            <div> {{ form_label(userForm.lastName) }}
                 {{ form_widget(userForm.lastName, {'attr': {'class':'inputLastName'}}) }}
                 {{ form_errors(userForm)}}
             </div>
@@ -46,6 +44,7 @@
                 {{ form_widget(userForm.phone, {'attr': {'class': 'inputPhone'}}) }}
                 {{ form_errors(userForm.phone)}}
             </div>
+            <div>
                 {{ form_label(userForm.email) }}
                 {{ form_widget(userForm.email, {'attr': {'class': 'inputEmail'}}) }}
                 {{ form_errors(userForm.email)}}
@@ -56,9 +55,9 @@
                 {{ form_errors(userForm.pseudo)}}
             </div>
             <div>
-                {{ form_label(userForm.level) }}<br>
-                {{ form_widget(userForm.level, {'attr': {'class':'inputLevel'}}) }}</div>
-            <div>
+                {{ form_label(userForm.level) }}
+                {{ form_widget(userForm.level, {'attr': {'class':'inputLevel'}}) }}
+            </div>
             <div>
                 {{ form_label(userForm.club) }}
                 {{ form_widget(userForm.club, {'attr': {'class': 'inputClub'}}) }}
@@ -76,7 +75,8 @@
             </div>
             {# {% endif %} #}
             <div> {{ form_label(userForm.submit) }}
-                {{ form_widget(userForm.submit, {'attr': {'class':'inputSubmit'}}) }}</div>
+                {{ form_widget(userForm.submit, {'attr': {'class':'inputSubmit'}}) }}
+            </div>
 
             {{ form_end(userForm) }}
         </div>
