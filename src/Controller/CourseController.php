@@ -111,25 +111,50 @@ class CourseController extends AbstractController
             //  créé  dans la console avec la commande make:form.
             // et je le stocke dans une variable $courseForm
 
-           $courseForm->handleRequest($request);
+            if ($request->isMethod('POST')) {
+                $courseForm->handleRequest($request);
+
            //Je prends les données de ma requête et je les envois au formulaire
            if ($courseForm->isSubmitted() && $courseForm->isValid()) {
+               $file = $courseForm->get('photo')->getData();
+               $filePhoto = md5(uniqid()).'.'.$file->guessExtension();
+               // je crée un numéro unique que je concatène avec l'extension de mon fichier uploadé
+               $file->move($this->getParameter('upload_directory'), $filePhoto);
+               //l’image uploadée est déplacée.
+               // Je crée le paramètre indiquant l'endroit où seront stockées mes images uploadées.
+               $course->setPhoto($filePhoto);
+               // je sauvegarde dans la colonne Photo le nom (unique) de mon image.
+
                $entityManager->persist($course);
                // la méthode persist indique de récupérer la variable Course modifiée et d'insérer
                $entityManager->flush();
                // la méthode 'flush' enregistre la modification
                // puis j'éxécute l'URL et je vais raffraichir ma DBB
                return $this->redirectToRoute('course');
-           }
-                $this->addFlash('success', 'Votre cours a bien été modifié');
+               }
+            }
+
+            $this->addFlash('success', 'Votre cours a bien été modifié');
                 //J'ajoute un message flash pour confirmer la modif
              //   return $this->redirectToRoute('course');
 
+            $form = $courseForm->createView();
                //Je crée une nouvelle route pour instancier un nouveau cours
-           return $this->render('course/course.html.twig', [
-                'courseForm' => $courseForm->createView(),
+           return $this->render('course/adminCourseUpdate.html.twig', [
+                'courseForm' => $form
                 // je retourne mon fichier twig, en lui envoyant
                 // la vue du formulaire, générée avec la méthode createView()
            ]);
+        }
+        /**
+         * @Route("/cours_show/{id}", name="course_show")
+         */
+
+        public function courseShow(CourseRepository $courseRepository, $id)
+        {
+            $course = $courseRepository->find($id);
+            return $this->render('course/courseShow.html.twig',[
+               'course' => $course
+            ]);
         }
 }

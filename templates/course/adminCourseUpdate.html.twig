@@ -7,8 +7,8 @@
                 {#  J'utilise ->  {{ form(courseForm) }}  ou pour pouvoir styliser
         je détaille comme ci-dessous   #}
 <div class="formulaire">
-    {#
-        {{ form_start(courseForm) }} #}
+
+        {{ form_start(courseForm) }}
 
         <div> {{ form_label(courseForm.name) }}
             {{ form_widget(courseForm.name, {'attr': {'class':'input_title'}}) }}
@@ -27,51 +27,51 @@
     Ensuite je créé @Assert et je mets la contrainte que je souhaite afficher #}
 
     <div> {{ form_label(courseForm.description) }}<br>
-        {{ form_widget(courseForm.description, {'attr': {'class':'input_description'}}) }}
+        {{ form_widget(courseForm.description, {'attr': {'class':'inputDescription'}}) }}
     </div>
     <div> {{ form_label(courseForm.price) }}<br>
-        {{ form_widget(courseForm.price, {'attr': {'class':'input_price'}}) }}</div>
+        {{ form_widget(courseForm.price, {'attr': {'class':'inputPrice'}}) }}</div>
     <div>
         {{ form_label(courseForm.minPerson) }}
-        {{ form_widget(courseForm.minPerson, {'attr': {'class': 'input_minPerson'}}) }}
+        {{ form_widget(courseForm.minPerson, {'attr': {'class': 'inputMinPerson'}}) }}
         {{ form_errors(courseForm.minPerson)}}
     </div>
     <div>
         {{ form_label(courseForm.maxPerson) }}
-        {{ form_widget(courseForm.maxPerson, {'attr': {'class': 'input_maxPerson'}}) }}
+        {{ form_widget(courseForm.maxPerson, {'attr': {'class': 'inputMaxPerson'}}) }}
         {{ form_errors(courseForm.maxPerson)}}
     </div>
     {# {% if is_granted("ROLE_CE") %} #}
     <div>
         {{ form_label(courseForm.priceCe) }}
-        {{ form_widget(courseForm.priceCe, {'attr': {'class': 'input_priceCe'}}) }}
+        {{ form_widget(courseForm.priceCe, {'attr': {'class': 'inputPriceCe'}}) }}
         {{ form_errors(courseForm.priceCe)}}
     </div>
     {# {% endif %} #}
     <div>
         {{ form_label(courseForm.duration) }}
-        {{ form_widget(courseForm.duration, {'attr': {'class': 'input_duration'}}) }}
+        {{ form_widget(courseForm.duration, {'attr': {'class': 'inputDuration'}}) }}
         {{ form_errors(courseForm.duration)}}
     </div>
     <div>
         {{ form_label(courseForm.ticket) }}
-        {{ form_widget(courseForm.ticket, {'attr': {'class': 'input_ticket'}}) }}
+        {{ form_widget(courseForm.ticket, {'attr': {'class': 'inputTicket'}}) }}
         {{ form_errors(courseForm.ticket)}}
     </div>
     <div>
         {{ form_label(courseForm.photo) }}
-        {{ form_widget(courseForm.photo, {'attr': {'class': 'input_photo'}}) }}
+        {{ form_widget(courseForm.photo, {'attr': {'class': 'inputPhoto'}}) }}
         {{ form_errors(courseForm.photo)}}
     </div>
     <div>
         {{ form_label(courseForm.alt) }}
-        {{ form_widget(courseForm.alt, {'attr': {'class': 'input_alt'}}) }}
+        {{ form_widget(courseForm.alt, {'attr': {'class': 'inputAlt'}}) }}
         {{ form_errors(courseForm.alt)}}
     </div>
     <div> {{ form_label(courseForm.submit) }}
-        {{ form_widget(courseForm.submit, {'attr': {'class':'input_submit'}}) }}</div>
-</div>
-    {{ form_end(courseForm) }}
+        {{ form_widget(courseForm.submit, {'attr': {'class':'inputSubmit'}}) }}</div>
 
+    {{ form_end(courseForm) }}
+</div>
         <button class="backCenter"><a href="{{ path('home') }}">Retour à l'accueil</a></button>
     {% endblock %}
