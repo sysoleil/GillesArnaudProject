@@ -28,7 +28,7 @@
   transition: all 1s ease;
 }
 .imgResp {
-  width: 100%;
+  width: $W100;
   height: 300px;
 }
 //---------------------------    BOTTOM     COURSES   -------------------------------------
@@ -56,13 +56,26 @@
   padding-top: 30%;
 }
 //---------------------------------------- FORMULAIRE  ------------------------------------------
-.inputTitle, .inputDescription, .inputPrice, .inputMinPerson, .inputMaxPerson,
-.inputPriceCe, .inputDuration, .inputTicket, .inputPhoto, .inputAlt{
-  font-size: $fs20;
-  color: $green;
+//.inputTitle, .inputDescription, .inputPrice, .inputMinPerson, .inputMaxPerson,
+//.inputPriceCe, .inputDuration, .inputTicket, .inputPhoto, .inputAlt{
+//  font-size: $fs20;
+//  color: $blue;
+//}
+.courseForm {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+  text-align: left;
 }
-.formulaire{
+.formulaireCourse{
   width: 50%;
   text-align: left;
   margin: 0 auto;
+  font-size: $fs20;
+  color: $blue;
+}
+.flashInfo{
+  color: $blue;
+  font-size: $fs35;
 }

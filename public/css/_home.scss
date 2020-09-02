@@ -7,7 +7,7 @@
 }
 .head {
   height: 100vh;
-  width: 100%;
+  width: $W100;
   background-image: url(../img/panorama.png);
   background-size: cover;
   position: relative;
@@ -15,7 +15,7 @@
 }
 .headLittle {
   height: content-box;
-  width: 100%;
+  width: $W100;
   background-image: url(../img/panorama.png);
   background-size: cover;
   position: relative;
@@ -26,7 +26,7 @@
 .filtreHeader{
   height: 85vh;
   height: 100%;
-  width: 100%;
+  width: $W100;
   background-color: rgba(200,200,200,0.65);
 }
 // --------------------------   UNDER -----------    HEADER  logo    ----------------------------
@@ -63,7 +63,7 @@
   justify-content: space-between;
   background-color: rgba(230,230,230,0.5);
   height: 10vh;
-  width: 100%;
+  width: $W100;
   z-index: 50;
   position: fixed;
 }
@@ -191,7 +191,7 @@ div#carousel ~ span:hover { color: #888; cursor: pointer; }
   padding-left: 35px;
 }
 .pSectionThreeHomePage{
-  width: 100%;
+  width: $W100;
   padding: 100px 70px 50px 30px;
   color: $red;
   font-size: $fs20;

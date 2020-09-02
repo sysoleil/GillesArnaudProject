@@ -94,10 +94,11 @@ class CourseController extends AbstractController
          * @Route("/cours_update/{id}", name="course_update")
          */
     // je crée ma route pour ma page
-        public function courseUpdate(CourseRepository $courseRepository,
-                                     Request $request,
-                                     EntityManagerInterface $entityManager,
-                                     $id)
+        public function courseUpdate(
+            CourseRepository $courseRepository,
+            Request $request,
+            EntityManagerInterface $entityManager,
+            $id)
             // Je veux récupérer une instance de la variable 'CourseRepository $courseRepository'
             //J'isntancie dans la variable la class pour récupérer les valeurs requises
             //Cette méthode Request permet de récupérer les données de la méthode post
@@ -113,17 +114,18 @@ class CourseController extends AbstractController
            $courseForm->handleRequest($request);
            //Je prends les données de ma requête et je les envois au formulaire
            if ($courseForm->isSubmitted() && $courseForm->isValid()) {
-                $entityManager->persist($course);
+               $entityManager->persist($course);
                // la méthode persist indique de récupérer la variable Course modifiée et d'insérer
-                $entityManager->flush();
+               $entityManager->flush();
                // la méthode 'flush' enregistre la modification
                // puis j'éxécute l'URL et je vais raffraichir ma DBB
-
+               return $this->redirectToRoute('course');
+           }
                 $this->addFlash('success', 'Votre cours a bien été modifié');
                 //J'ajoute un message flash pour confirmer la modif
              //   return $this->redirectToRoute('course');
+
                //Je crée une nouvelle route pour instancier un nouveau cours
-            }
            return $this->render('course/course.html.twig', [
                 'courseForm' => $courseForm->createView(),
                 // je retourne mon fichier twig, en lui envoyant

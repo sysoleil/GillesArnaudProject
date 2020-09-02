@@ -27,7 +27,7 @@ class UserType extends AbstractType
                     'Homme' => false]])
             ->add('email', TextType::class,['label'=> 'Votre mail',
                 'invalid_message' => 'Votre mail doit comporter un @'])
-            ->add('club', TextType::class,['label'=> 'Adhérent au club de...',
+            ->add('club', TextType::class,['label'=> 'Adhérent au club du ...',
                 'required'=> false])
             ->add('dateBirth',DateType::class,[
                 'widget'=>'single_text'])

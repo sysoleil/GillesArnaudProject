@@ -59,13 +59,14 @@ class User
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     *
      */
     private $phone;
 
     /**
      * @ORM\Column(type="string", length=20)
      * @Assert\Length(min="6", max="20",
-     *     minMessage="Votre mot de passe doit comporter au moins de 6 caractères",
+     *     minMessage="Votre mot de passe doit comporter au moins 6 caractères",
      *     maxMessage="Votre mot de passe ne doit pas comporter plus de 20 caractères")
      * @Assert\NotBlank(message = "Un mot de passe est obligatoire")
      */

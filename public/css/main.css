@@ -62,16 +62,25 @@
   padding-top: 30%;
 }
 
-.inputTitle, .inputDescription, .inputPrice, .inputMinPerson, .inputMaxPerson,
-.inputPriceCe, .inputDuration, .inputTicket, .inputPhoto, .inputAlt {
-  font-size: 20px;
-  color: #005B34;
+.courseForm {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+  text-align: left;
 }
 
-.formulaire {
+.formulaireCourse {
   width: 50%;
   text-align: left;
   margin: 0 auto;
+  font-size: 20px;
+  color: #422ED9;
+}
+
+.flashInfo {
+  color: #422ED9;
+  font-size: 35px;
 }
 
 * {
@@ -409,6 +418,19 @@ div#carousel2 ~ span:hover {
   font-family: "Helvetica Neue", arial;
   color: whitesmoke;
   text-align: center;
+}
+
+.flashInfo {
+  color: #422ED9;
+  font-size: 35px;
+}
+
+.formulaire {
+  width: 50%;
+  text-align: left;
+  margin: 0 auto;
+  font: "Helvetica Neue", arial;
+  color: #422ED9;
 }
 
 /*# sourceMappingURL=main.css.map */
