@@ -14,10 +14,10 @@ class UserController extends AbstractController
 
 {
     /**
-     * @Route("/user", name="user")
+     * @Route("/user", name="admin_user")
      */
 
-    public function user (UserRepository $userRepository)
+    public function adminUser (UserRepository $userRepository)
     {
         // je veux récupérer une instance de la variable 'UserRepository $userRepository...'
         //J'instancie dans la variable la class pour récupérer les valeurs requises
@@ -28,18 +28,18 @@ class UserController extends AbstractController
         // $types = $userRepository->findBy([],['id' =>'desc']);
 
         // Je crée ma recherche puis je lui donne une valeur
-        return $this->render('user/user.html.twig',[
+        return $this->render('user/adminUser.html.twig',[
             // je crée la variable Twig 'course'  que j'irai appeler dans mon fichier Twig Home.html.twig
             'users' => $users
         ]);
     }
     /**
-     * @Route("/user_insert", name="user_insert")
+     * @Route("/user_create", name="user_create")
      */
 
-    public function user_insert (UserRepository $userRepository,
-                                   Request $request,
-                                   EntityManagerInterface $entityManager)
+    public function userCreate (UserRepository $userRepository,
+                                 Request $request,
+                                 EntityManagerInterface $entityManager)
     {
         $user = new User();
         // j'instancie un nouvel utilisateur et je lui donne la variable $user
@@ -59,9 +59,9 @@ class UserController extends AbstractController
 
             $this->addFlash('success', 'Votre compte utilisateur a bien été créé');
             # Je demande l'affichage du 'message' tel qu'indiqué #}
-            return $this->redirectToRoute('user');
+            return $this->redirectToRoute('home');
         }
-        return $this->render('user/adminUserInsert.html.twig',[
+        return $this->render('user/userCreate.html.twig',[
             'userForm' => $userForm->createView(),
             'user' => $user]);
         }
@@ -71,24 +71,24 @@ class UserController extends AbstractController
          */
 
         public function userDelete(UserRepository $userRepository,
-                                     EntityManagerInterface $entityManager,
-                                     $id)
+                                   EntityManagerInterface $entityManager,
+                                   $id)
         {
             $user = $userRepository->find($id);
             $entityManager->remove($user);
             $entityManager->flush();
             $this->addFlash('success', 'Le compte a bien été supprimé');
-            return $this->redirectToRoute('user');
+            return $this->redirectToRoute('admin_user');
         }
 
         /**
          * @Route("/user_update/{id}", name="user_update")
          */
     // je crée ma route pour ma page
-        public function userUpdate( UserRepository $userRepository,
-                                     Request $request,
-                                     EntityManagerInterface $entityManager,
-                                     $id)
+        public function userUpdate(UserRepository $userRepository,
+                                   Request $request,
+                                   EntityManagerInterface $entityManager,
+                                   $id)
             // Je veux récupérer une instance de la variable 'UserRepository $userRepository'
             //J'isntancie dans la variable la class pour récupérer les valeurs requises
             //Cette méthode Request permet de récupérer les données de la méthode post
@@ -101,24 +101,39 @@ class UserController extends AbstractController
             //  créé  dans la console avec la commande make:form.
             // et je le stocke dans une variable $userForm
 
-           $userForm->handleRequest($request);
-           //Je prends les données de ma requête et je les envois au formulaire
-           if ($userForm->isSubmitted() && $userForm->isValid()) {
-                $entityManager->persist($user);
-               // la méthode persist indique de récupérer la variable User modifiée et d'insérer
-                $entityManager->flush();
-               // la méthode 'flush' enregistre la modification
-               // puis j'éxécute l'URL et je vais raffraichir ma DBB
+            if ($request->isMethod('POST')) {
+                $userForm->handleRequest($request);
 
-                $this->addFlash('success', 'Votre compte a bien été modifié');
-                //J'ajoute un message flash pour confirmer la modif
-             //   return $this->redirectToRoute('user');
-               //Je crée une nouvelle route pour instancier un nouvel utilisateur
+                //Je prends les données de ma requête et je les envois au formulaire
+                if ($userForm->isSubmitted() && $userForm->isValid()) {
+                    $entityManager->persist($user);
+                    // la méthode persist indique de récupérer la variable User modifiée et d'insérer
+                    $entityManager->flush();
+                    // la méthode 'flush' enregistre la modification
+                    // puis j'éxécute l'URL et je vais raffraichir ma DBB
+
+                    return $this->redirectToRoute('home');
+                }
             }
-           return $this->render('user/user.html.twig', [
-                'courseForm' => $courseForm->createView(),
+                 $this->addFlash('success', 'Votre compte a bien été modifié');
+                 //J'ajoute un message flash pour confirmer la modif
+                        $form = $userForm->createView();
+                 //Je crée une nouvelle route pour revenir sur l'utilisateur
+                 return $this->render('user/userCreate.html.twig', [
+                'userForm' => $form
                 // je retourne mon fichier twig, en lui envoyant
                 // la vue du formulaire, générée avec la méthode createView()
            ]);
         }
+         /**
+          * @Route("/user_show", name="user_show")
+          */
+
+         public function userShow(UserRepository $userRepository)
+         {
+             $user = $userRepository->findAll();
+             return $this->render('user/userShow.html.twig',[
+                'user' => $user
+             ]);
+         }
 }

@@ -1,0 +1,28 @@
+.flashInfo{
+  color: $blue;
+  font-size: $fs35;
+}
+//---------------------------------------- courses FORMULAIRES  ------------------------------------------
+//.courseForm {
+//  display: flex;
+//  flex-direction: column;
+//  width: 60%;
+//  margin: auto;
+//  text-align: left;
+//}
+.formulaireCourse{
+  width: 50%;
+  text-align: left;
+  margin: 8% auto;
+  font-size: $fs20;
+  color: $blue;
+}
+//---------------------------------------- courses FORMULAIRES  ------------------------------------------
+.formulaireUser{
+  width: 80%;
+  text-align: left;
+  margin: 8% auto;
+  font: $fontH;
+  color: $blue;
+  border-color: $red;
+}

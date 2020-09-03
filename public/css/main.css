@@ -1,4 +1,11 @@
 @charset "UTF-8";
+.headCourse {
+  padding-top: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+}
+
 .courseMain {
   position: relative;
 }
@@ -41,12 +48,14 @@
 
 .courseHoverContainer {
   position: relative;
+  height: 70%;
 }
 
 .courseHover {
   color: transparent;
   position: absolute;
   z-index: -100;
+  Top: 10px;
 }
 
 .courseHover h2 {
@@ -57,10 +66,10 @@
   width: 100%;
   height: 98.2%;
   position: absolute;
-  background-color: rgba(133, 12, 53, 0.5);
   top: 0;
   left: 0;
   color: whitesmoke;
+  font-size: 35px;
   z-index: 100;
 }
 
@@ -88,13 +97,6 @@
   justify-content: space-around;
 }
 
-.headCourse {
-  padding-top: 10%;
-  display: flex;
-  flex-wrap: wrap;
-  width: 30%;
-}
-
 .row {
   display: flex;
   justify-content: space-around;
@@ -116,41 +118,6 @@
 .imgResp {
   width: 100%;
   height: 300px;
-}
-
-.titleCourseType {
-  font-family: Trattatello, arial, sans-serif;
-  color: #422ED9;
-  font-size: 30px;
-  padding-top: 30%;
-}
-
-.titleCourseTypeBis {
-  font-family: "Helvetica Neue", arial;
-  color: #422ED9;
-  font-size: 24px;
-  padding-top: 30%;
-}
-
-.courseForm {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  margin: auto;
-  text-align: left;
-}
-
-.formulaireCourse {
-  width: 50%;
-  text-align: left;
-  margin: 0 auto;
-  font-size: 20px;
-  color: #422ED9;
-}
-
-.flashInfo {
-  color: #422ED9;
-  font-size: 35px;
 }
 
 * {
@@ -199,19 +166,53 @@
   width: 30%;
 }
 
-.logochild {
+.logoChild {
   width: 50%;
   margin-left: 40px;
 }
 
-.logochildLittle {
+.logoChildLittle {
   height: 10vh;
   margin-left: 40px;
 }
 
+.buttonCenter {
+  justify-content: space-between;
+}
+
 .button {
   padding: 10px 35px;
+  background-color: #005B34;
+  color: whitesmoke;
+  border-radius: 60%;
+}
+
+.buttonDelete {
+  padding: 10px 35px;
   background-color: #850C35;
+  color: whitesmoke;
+  border-radius: 60%;
+}
+
+.buttonConnect {
+  transform: translate(-50%, 0);
+  position: absolute;
+  right: 10%;
+  bottom: 20px;
+  font-family: "Helvetica Neue", arial;
+}
+
+.buttonLeft {
+  transform: translate(-50%, 0);
+  position: absolute;
+  left: 18%;
+  bottom: 20px;
+  font-family: "Helvetica Neue", arial;
+}
+
+.buttonCpte {
+  padding: 10px 35px;
+  background-color: #005B34;
   color: whitesmoke;
   border-radius: 60%;
 }
@@ -497,17 +498,117 @@ div#carousel2 ~ span:hover {
   text-align: center;
 }
 
+.headUser {
+  width: 100%;
+  background-image: url(../img/panorama.png);
+  background-size: 300px, contain;
+  position: relative;
+  z-index: -1;
+}
+
+.filtreHeader {
+  height: 70vh;
+  width: 100%;
+  background-color: rgba(200, 200, 200, 0.65);
+}
+
+.userMain {
+  position: relative;
+}
+
+.userBox {
+  margin: 10px auto;
+  border-color: #850C35;
+  background-color: whitesmoke;
+  width: 300px;
+  height: 40px;
+}
+
+.userConnect {
+  display: flex;
+  padding: 0;
+  width: 100%;
+  height: 80px;
+}
+
+.userDisplay {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px 0 130px;
+  position: relative;
+}
+
+.userContainer {
+  width: 28%;
+  height: 180px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.userTitle {
+  font-family: Trattatello, arial, sans-serif;
+  color: #422ED9;
+  font-size: 35px;
+  margin-top: 130px;
+  text-align: center;
+}
+
+.userShowDisplay {
+  display: inline-block;
+  justify-content: space-around;
+  padding: 0;
+  position: relative;
+}
+
+.userShowContainer {
+  width: 45%;
+}
+
+.userShowButton {
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.userButtonCenter {
+  justify-content: space-between;
+}
+
+.userButton {
+  padding: 8px 20px;
+  background-color: #005B34;
+  color: whitesmoke;
+  border-radius: 60%;
+}
+
+.userButtonDelete {
+  padding: 8px 20px;
+  background-color: #850C35;
+  color: whitesmoke;
+  border-radius: 60%;
+}
+
 .flashInfo {
   color: #422ED9;
   font-size: 35px;
 }
 
-.formulaire {
+.formulaireCourse {
   width: 50%;
   text-align: left;
-  margin: 0 auto;
+  margin: 8% auto;
+  font-size: 20px;
+  color: #422ED9;
+}
+
+.formulaireUser {
+  width: 80%;
+  text-align: left;
+  margin: 8% auto;
   font: "Helvetica Neue", arial;
   color: #422ED9;
+  border-color: #850C35;
 }
 
 /*# sourceMappingURL=main.css.map */

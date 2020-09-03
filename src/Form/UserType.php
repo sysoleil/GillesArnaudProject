@@ -29,7 +29,7 @@ class UserType extends AbstractType
                 'invalid_message' => 'Votre mail doit comporter un @'])
             ->add('club', TextType::class,['label'=> 'Adhérent au club du ...',
                 'required'=> false])
-            ->add('dateBirth',DateType::class,[
+            ->add('dateBirth',DateType::class,['label'=> 'Votre date de naissance',
                 'widget'=>'single_text'])
             ->add('phone', TextType::class, ['label'=> 'Votre téléphone',
                 'invalid_message' => 'Le numéro doit comporter %num% chiffres',

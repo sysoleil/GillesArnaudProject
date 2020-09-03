@@ -2,14 +2,16 @@
 {% block title %}Créer compte{% endblock %}
     {% block body %}
         {% include 'commons/_headerLittle.html.twig' %}
-        <h1 class="titleCourse"> Créer un compte</h1>
+        <h1 class="courseTitle"> Créer un compte</h1>
 
         {# Pour décomposer mon formulaire j'utilise les fonctions form_start() et form_end.
         qui balisent mon formulaire. Ensuite en fonction des champs j'utilise form_widget() et form_label().
         Pour le second argument, j'utilise ensuite l'objet 'attr' pour gérer les classes de mes inputs
         #}
+        <div>
+        {{ form(userForm) }}
 
-        <div class="formulaire">
+      {#  <div class="formulaireUser">
 
             {{ form_start(userForm) }}
 
@@ -26,7 +28,7 @@
 
             Ensuite je vrais créer dans mon créé @Assert et je mets la contrainte que je souhaite afficher #}
 
-            <div> {{ form_label(userForm.lastName) }}
+        {#    <div> {{ form_label(userForm.lastName) }}
                 {{ form_widget(userForm.lastName, {'attr': {'class':'inputLastName'}}) }}
                 {{ form_errors(userForm)}}
             </div>
@@ -69,7 +71,7 @@
                 {{ form_errors(userForm.password)}}
             </div>
             {# {% if is_granted("ROLE_ADMIN") %} #}
-            <div>
+        {#    <div>
                 {{ form_label(userForm.creditDuration) }}
                 {{ form_widget(userForm.creditDuration, {'attr': {'class': 'inputCreditDuration'}}) }}
             </div>

@@ -94,11 +94,10 @@ class CourseController extends AbstractController
          * @Route("/cours_update/{id}", name="course_update")
          */
     // je crée ma route pour ma page
-        public function courseUpdate(
-            CourseRepository $courseRepository,
-            Request $request,
-            EntityManagerInterface $entityManager,
-            $id)
+        public function courseUpdate(CourseRepository $courseRepository,
+                                    Request $request,
+                                    EntityManagerInterface $entityManager,
+                                    $id)
             // Je veux récupérer une instance de la variable 'CourseRepository $courseRepository'
             //J'isntancie dans la variable la class pour récupérer les valeurs requises
             //Cette méthode Request permet de récupérer les données de la méthode post

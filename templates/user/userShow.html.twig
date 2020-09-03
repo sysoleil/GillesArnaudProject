@@ -1,0 +1,21 @@
+{% extends 'commons/base.html.twig' %}
+    {% block body %}
+        {% include 'commons/_headerLittle.html.twig' %}
+        <main class="headUser">
+            <section class="userShowDisplay filtreHeader">
+                        <input type="email" class="userBox">
+                        <br>
+                       <input type="password" class="userBox">
+
+
+                        <div class="userShowButton">
+                            <a class="buttonCpte" href="">Pas encore de compte</a>
+                        </div>
+            </section>
+            <section>
+                        <a class="button buttonConnect" href="{{ path('home') }}">Se connecter</a>
+                      {#      <input type="submit" name="Se connecter" class="buttonConnect"> #}
+                        <a class="button buttonLeft" href="{{ path('course') }}">Les cours</a>
+            </section>
+        </main>
+    {% endblock %}

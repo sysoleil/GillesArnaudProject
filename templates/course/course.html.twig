@@ -2,7 +2,7 @@
     {% block body %}
         <main class="courseMain">
             {% include 'commons/_headerLittle.html.twig' %}
-            <h1 class="courseTitle"> MES SERVICES</h1>
+            <h1 class="courseTitle"> LES COURS</h1>
             <section class="courseDisplay">
                 {% for course in courses %}
                     <div class="courseContainer">
@@ -11,14 +11,14 @@
                                 <img class="coursePhoto" src="{{ asset('upload_directory/' ~ course.photo) }}" alt="{{ course.alt }}" name="{{ course.alt }}">
                                 <div class="courseHover">
                                     <h2>{{ course.name }}</h2>
-                                    <p>
+                                  {#  <p>
                                         {{ course.description }}
-                                    </p>
+                                    </p> #}
                                 </div>
                             </div>
                         </a>
-                        <div>
-                            <a class="button" href="{{ path('course_delete',{'id':course.id}) }}">supprimer</a>
+                        <div class="buttonCenter">
+                            <a class="buttonDelete" href="{{ path('course_delete',{'id':course.id}) }}">supprimer</a>
                             <a class="button" href="{{ path('course_update',{'id':course.id}) }}">modifier</a>
                         </div>
                     </div>

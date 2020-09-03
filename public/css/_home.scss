@@ -42,22 +42,50 @@
   z-index: 400;
   width: 30%;
 }
-.logochild{
+.logoChild{
   width: 50%;
   margin-left: 40px;
 }
-.logochildLittle{
+.logoChildLittle{
   height: 10vh;
   margin-left: 40px;
 }
 // -------------------------------------    button      ----------------------------
+.buttonCenter{
+  justify-content: space-between;
+}
 .button{
+  padding: 10px 35px;
+  background-color: $green;
+  color: $white;
+  border-radius: 60%;
+}
+.buttonDelete{
   padding: 10px 35px;
   background-color: $red;
   color: $white;
   border-radius: 60%;
 }
-
+.buttonConnect{
+  transform: translate(-50%, 0);
+  position: absolute;
+  right: 10%;
+  bottom: 20px;
+  font-family: "Helvetica Neue", arial;
+}
+.buttonLeft{
+  transform: translate(-50%,0);
+  position: absolute;
+  left: 18%;
+  bottom: 20px;
+  font-family: $fontH;
+}
+.buttonCpte{
+  padding: 10px 35px;
+  background-color: $green;
+  color: $white;
+  border-radius: 60%;
+}
 // -------------------------------------    LI      ----------------------------
 
 .items {

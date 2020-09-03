@@ -2,7 +2,7 @@
     {% block body %}
         {% include 'commons/_headerLittle.html.twig' %}
             <main class="courseMain">
-                    <section class="courseShowDisplay">
+                    <div class="courseShowDisplay">
                         <img class="courseShowPhoto" src="{{ asset('upload_directory/' ~ course.photo) }}" alt="{{ course.alt }}" name="{{ course.alt }}">
                         <div class="courseShowContainer">
                             <h1>{{ course.name }}</h1>
@@ -39,6 +39,6 @@
                             </div>
                             <a class="button buttonLeft" href="{{ path('course') }}">Les cours</a>
                         </div>
-                    </section>
+                    </div>
             </main>
     {% endblock %}
