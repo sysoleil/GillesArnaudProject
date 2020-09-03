@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -80,6 +82,16 @@ class User
      * @ORM\Column(type="float", nullable=true)
      */
     private $creditDuration;
+
+    /**
+     * @ORM\OneToMany(targetEntity=TicketBook::class, mappedBy="user")
+     */
+    private $ticketBook;
+
+    public function __construct()
+    {
+        $this->ticketBook = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -214,6 +226,37 @@ class User
     public function setCreditDuration(?float $creditDuration): self
     {
         $this->creditDuration = $creditDuration;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ticketBook[]
+     */
+    public function getTicketBook(): Collection
+    {
+        return $this->ticketBook;
+    }
+
+    public function addTicketBook(ticketBook $ticketBook): self
+    {
+        if (!$this->ticketBook->contains($ticketBook)) {
+            $this->ticketBook[] = $ticketBook;
+            $ticketBook->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTicketBook(ticketBook $ticketBook): self
+    {
+        if ($this->ticketBook->contains($ticketBook)) {
+            $this->ticketBook->removeElement($ticketBook);
+            // set the owning side to null (unless already changed)
+            if ($ticketBook->getUser() === $this) {
+                $ticketBook->setUser(null);
+            }
+        }
 
         return $this;
     }
