@@ -10,14 +10,6 @@
   position: relative;
 }
 
-.buttonLeft {
-  transform: translate(-50%, 0);
-  position: absolute;
-  left: 18%;
-  bottom: 20px;
-  font-family: "Helvetica Neue", arial;
-}
-
 .courseDisplay {
   display: flex;
   flex-wrap: wrap;
@@ -174,47 +166,6 @@
 .logoChildLittle {
   height: 10vh;
   margin-left: 40px;
-}
-
-.buttonCenter {
-  justify-content: space-between;
-}
-
-.button {
-  padding: 10px 35px;
-  background-color: #005B34;
-  color: whitesmoke;
-  border-radius: 60%;
-}
-
-.buttonDelete {
-  padding: 10px 35px;
-  background-color: #850C35;
-  color: whitesmoke;
-  border-radius: 60%;
-}
-
-.buttonConnect {
-  transform: translate(-50%, 0);
-  position: absolute;
-  right: 10%;
-  bottom: 20px;
-  font-family: "Helvetica Neue", arial;
-}
-
-.buttonLeft {
-  transform: translate(-50%, 0);
-  position: absolute;
-  left: 18%;
-  bottom: 20px;
-  font-family: "Helvetica Neue", arial;
-}
-
-.buttonCpte {
-  padding: 10px 35px;
-  background-color: #005B34;
-  color: whitesmoke;
-  border-radius: 60%;
 }
 
 .items {
@@ -498,6 +449,45 @@ div#carousel2 ~ span:hover {
   text-align: center;
 }
 
+.headTicket {
+  padding-top: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+}
+
+.ticketMain {
+  position: relative;
+}
+
+.ticketShowDisplay {
+  display: flex;
+  justify-content: space-around;
+  padding: 80px 0;
+  position: relative;
+}
+
+.ticketShowContainer {
+  width: 45%;
+  color: #005B34;
+}
+
+.ticketShowP {
+  padding-top: 10px;
+}
+
+.ticketShowButton {
+  display: flex;
+  justify-content: space-around;
+  color: whitesmoke;
+  background-color: #005B34;
+  border-radius: 50%;
+}
+
+.ticketBox {
+  border: 3px solid #850C35;
+}
+
 .headUser {
   width: 100%;
   background-image: url(../img/panorama.png);
@@ -609,6 +599,39 @@ div#carousel2 ~ span:hover {
   font: "Helvetica Neue", arial;
   color: #422ED9;
   border-color: #850C35;
+}
+
+.buttonCenter {
+  justify-content: space-between;
+}
+
+.button {
+  padding: 10px 35px;
+  background-color: #005B34;
+  color: whitesmoke;
+  border-radius: 60%;
+}
+
+.buttonDelete {
+  padding: 10px 35px;
+  background-color: #850C35;
+  color: whitesmoke;
+  border-radius: 60%;
+}
+
+.buttonLeft {
+  transform: translate(-50%, 0);
+  position: absolute;
+  left: 18%;
+  bottom: 20px;
+  font-family: "Helvetica Neue", arial;
+}
+
+.buttonCpte {
+  padding: 10px 35px;
+  background-color: #005B34;
+  color: whitesmoke;
+  border-radius: 60%;
 }
 
 /*# sourceMappingURL=main.css.map */

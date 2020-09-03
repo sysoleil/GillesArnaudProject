@@ -31,11 +31,10 @@ class TicketBook
      * @ORM\Column(type="float")
      */
     private $price;
-
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="ticketBooks")
+     * @ORM\ManyToOne(targetEntity=UserTicketBook::class, inversedBy="TicketBook")
      */
-    private $user;
+    private $userTicketBook;
 
     public function getId(): ?int
     {
@@ -78,14 +77,14 @@ class TicketBook
         return $this;
     }
 
-    public function getUser(): ?User
+    public function getUserTicketBook(): ?UserTicketBook
     {
-        return $this->user;
+        return $this->userTicketBook;
     }
 
-    public function setUser(?User $user): self
+    public function setUserTicketBook(?UserTicketBook $userTicketBook): self
     {
-        $this->user = $user;
+        $this->userTicketBook = $userTicketBook;
 
         return $this;
     }

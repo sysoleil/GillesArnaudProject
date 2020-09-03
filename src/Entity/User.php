@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -84,9 +83,9 @@ class User
     private $creditDuration;
 
     /**
-     * @ORM\OneToMany(targetEntity=TicketBook::class, mappedBy="user")
+     * @ORM\ManyToOne(targetEntity=UserTicketBook::class, inversedBy="User")
      */
-    private $ticketBook;
+    private $userTicketBook;
 
     public function __construct()
     {
@@ -230,33 +229,14 @@ class User
         return $this;
     }
 
-    /**
-     * @return Collection|ticketBook[]
-     */
-    public function getTicketBook(): Collection
+    public function getUserTicketBook(): ?UserTicketBook
     {
-        return $this->ticketBook;
+        return $this->userTicketBook;
     }
 
-    public function addTicketBook(ticketBook $ticketBook): self
+    public function setUserTicketBook(?UserTicketBook $userTicketBook): self
     {
-        if (!$this->ticketBook->contains($ticketBook)) {
-            $this->ticketBook[] = $ticketBook;
-            $ticketBook->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeTicketBook(ticketBook $ticketBook): self
-    {
-        if ($this->ticketBook->contains($ticketBook)) {
-            $this->ticketBook->removeElement($ticketBook);
-            // set the owning side to null (unless already changed)
-            if ($ticketBook->getUser() === $this) {
-                $ticketBook->setUser(null);
-            }
-        }
+        $this->userTicketBook = $userTicketBook;
 
         return $this;
     }

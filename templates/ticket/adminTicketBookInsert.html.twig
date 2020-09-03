@@ -1,8 +1,8 @@
 {% extends 'commons/base.html.twig' %}
-{% block title %}Création Type de cours{% endblock %}
+{% block title %}Création CARNET{% endblock %}
     {% block body %}
         {% include 'commons/_headerLittle.html.twig' %}
-        <h1 class="courseTitle"> Enregistrer un type de cours</h1>
+        <h1 class="courseTitle"> Enregistrer un type de CARNET</h1>
         {#       <div>
                     {{ form(courseForm) }} #}
 
@@ -13,7 +13,7 @@
 
         <div class="formulaireCourse">
 
-            {{ form_start(ticketBookForm,{'attr':{'class': 'courseForm'}}) }}
+            {{ form_start(ticketBookForm) }}
 
             <div> {{ form_label(ticketBookForm.name) }}
                 {{ form_widget(ticketBookForm.name, {'attr': {'class':'inputTitle'}}) }}
@@ -36,11 +36,7 @@
             </div>
             <div> {{ form_label(ticketBookForm.price) }}<br>
                 {{ form_widget(ticketBookForm.price, {'attr': {'class':'inputPrice'}}) }}</div>
-            <div>
-                {{ form_label(ticketBookForm.user) }}
-                {{ form_widget(ticketBookForm.user, {'attr': {'class': 'inputUser'}}) }}
-                {{ form_errors(ticketBookForm.user)}}
-            </div>
+
             <div> {{ form_label(ticketBookForm.submit) }}
                 {{ form_widget(ticketBookForm.submit, {'attr': {'class':'inputSubmit'}}) }}</div>
 
