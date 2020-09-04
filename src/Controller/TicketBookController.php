@@ -60,7 +60,7 @@ class TicketBookController extends AbstractController
             # Je demande l'affichage du 'message' tel qu'indiqué #}
             return $this->redirectToRoute('ticket_book_insert');
         }
-            return $this->render('ticket/adminTicketBookInsert.html.twig',[
+            return $this->render('ticket/adminCourseTypeInsert.html.twig',[
             'ticketBookForm' => $ticketBookForm->createView(),
             '$ticketBook' => $ticketBook]);
         }

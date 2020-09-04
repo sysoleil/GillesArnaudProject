@@ -59,7 +59,7 @@ class UserController extends AbstractController
 
             $this->addFlash('success', 'Votre compte utilisateur a bien été créé');
             # Je demande l'affichage du 'message' tel qu'indiqué #}
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('user_show');
         }
         return $this->render('user/userCreate.html.twig',[
             'userForm' => $userForm->createView(),

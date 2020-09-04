@@ -486,6 +486,7 @@ div#carousel2 ~ span:hover {
 
 .ticketBox {
   border: 3px solid #850C35;
+  padding: 20px;
 }
 
 .headUser {
@@ -603,6 +604,8 @@ div#carousel2 ~ span:hover {
 
 .buttonCenter {
   justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .button {
