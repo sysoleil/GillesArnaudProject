@@ -11,15 +11,19 @@
                                 <img class="coursePhoto" src="{{ asset('upload_directory/' ~ course.photo) }}" alt="{{ course.alt }}" name="{{ course.alt }}">
                                 <div class="courseHover">
                                     <h2>{{ course.name }}</h2>
-                                  {#  <p>
-                                        {{ course.description }}
-                                    </p> #}
                                 </div>
                             </div>
                         </a>
+                        <div>
+                            {% if is_granted("ROLE_ADMIN") %}
+                                <a class="buttonDelete" href="{{ path('course_delete',{'id':course.id}) }}">supprimer</a>
+                                <a class="button" href="{{ path('course_update',{'id':course.id}) }}">modifier</a>
+                            {% endif %}
+                        </div>
                         <div class="buttonCenter">
-                            <a class="buttonDelete" href="{{ path('course_delete',{'id':course.id}) }}">supprimer</a>
-                            <a class="button" href="{{ path('course_update',{'id':course.id}) }}">modifier</a>
+                            <div class="courseShowButton">
+                                <a class="button" href="">Reserver</a>
+                            </div>
                         </div>
                     </div>
                 {% endfor %}

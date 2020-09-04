@@ -38,7 +38,7 @@ class CourseController extends AbstractController
      * @Route("/cours_insert", name="course_insert")
      */
 
-    public function course_insert (CourseRepository $courseRepository,
+    public function courseInsert (CourseRepository $courseRepository,
                                    Request $request,
                                    EntityManagerInterface $entityManager)
     {

@@ -17,7 +17,7 @@ class CourseTypeController extends AbstractController
      * @Route("/cours_type", name="course_type")
      */
 
-    public function course_type (CourseTypeRepository $courseTypeRepository)
+    public function courseType (CourseTypeRepository $courseTypeRepository)
     {
         // je veux récupérer une instance de la variable 'CourseTypeRepository $courseTypeRepository...'
         //J'instancie dans la variable la class pour récupérer les valeurs requises
@@ -37,7 +37,7 @@ class CourseTypeController extends AbstractController
      * @Route("/cours_type_insert", name="course_type_insert")
      */
 
-    public function course_type_insert (CourseTypeRepository $courseTypeRepository,
+    public function courseTypeInsert (CourseTypeRepository $courseTypeRepository,
                                    Request $request,
                                    EntityManagerInterface $entityManager)
     {
@@ -70,7 +70,7 @@ class CourseTypeController extends AbstractController
      * @Route("/course_type_delete/{id}", name="course_type_delete")
      */
 
-    public function course_type_delete(CourseTypeRepository $courseTypeRepository,
+    public function courseTypeDelete(CourseTypeRepository $courseTypeRepository,
                                        EntityManagerInterface $entityManager,
                                        $id)
     {
@@ -84,10 +84,10 @@ class CourseTypeController extends AbstractController
      * @Route("/cours_type_update/{id}", name="course_type_update")
      */
     // je crée ma route pour ma page
-    public function course_type_update(CourseTypeRepository $courseTypeRepository,
-                                 Request $request,
-                                 EntityManagerInterface $entityManager,
-                                 $id)
+    public function courseTypeUpdate(CourseTypeRepository $courseTypeRepository,
+                                    Request $request,
+                                    EntityManagerInterface $entityManager,
+                                    $id)
         // Je veux récupérer une instance de la variable 'CourseTypeRepository $courseTypeRepository'
         //J'isntancie dans la variable la class pour récupérer les valeurs requises
         //Cette méthode Request permet de récupérer les données de la méthode post
@@ -128,7 +128,7 @@ class CourseTypeController extends AbstractController
  //    * @Route("/cours_type_show/{id}", name="course_type_show")
   //   */
 
-//    public function course_type_show(CourseTypeRepository $courseTypeRepository , $id)
+//    public function courseTypeShow(CourseTypeRepository $courseTypeRepository , $id)
 //    {
 //        $courseType = $courseTypeRepository->find($id);
 //        return $this->render('courseType/courseTypeShow.html.twig',[

@@ -18,7 +18,7 @@ class TicketBookController extends AbstractController
      * @Route("/ticket", name="ticket_book_show")
      */
 
-    public function ticket_book_show (TicketBookRepository $ticketBookRepository)
+    public function ticketBookShow (TicketBookRepository $ticketBookRepository)
     {
         // je veux récupérer une instance de la variable 'TicketBookRepository $ticketBookRepository'
         //J'instancie dans la variable la class pour récupérer les valeurs requises
@@ -37,7 +37,7 @@ class TicketBookController extends AbstractController
      * @Route("/ticket_insert", name="ticket_book_insert")
      */
 
-    public function ticket_book_insert (TicketBookRepository $ticketBookRepository,
+    public function ticketBookInsert (TicketBookRepository $ticketBookRepository,
                                         Request $request,
                                         EntityManagerInterface $entityManager)
     {
@@ -69,7 +69,7 @@ class TicketBookController extends AbstractController
          * @Route("/ticket_delete/{id}", name="ticket_delete")
          */
 
-        public function ticket_delete(TicketBookRepository $ticketBookRepository,
+        public function ticketDelete(TicketBookRepository $ticketBookRepository,
                                       EntityManagerInterface $entityManager,
                                       $id)
         {
@@ -83,7 +83,7 @@ class TicketBookController extends AbstractController
          * @Route("/ticket_update/{id}", name="ticket_book_update")
          */
     // je crée ma route pour ma page
-        public function ticket_book_update(TicketBookRepository $ticketBookRepository,
+        public function ticketBookUpdate(TicketBookRepository $ticketBookRepository,
                                            Request $request,
                                            EntityManagerInterface $entityManager,
                                            $id)

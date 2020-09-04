@@ -1,0 +1,61 @@
+{% extends 'commons/base.html.twig' %}
+{% block title %}modification reservation{% endblock %}
+    {% block body %}
+        {% include 'commons/_headerLittle.html.twig' %}
+        <h1 class="titleCourse"> Modifier une réservation</h1>
+
+        {#  J'utilise ->  {{ form(courseForm) }}  ou pour pouvoir styliser
+je détaille comme ci-dessous   #}
+        <div class="formulaire">
+
+            {{ form_start(userCourseForm) }}
+
+            <div> {{ form_label(userCourseForm.date_course) }}
+                {{ form_widget(userCourseForm.date_course, {'attr': {'class':'input_date'}}) }}
+                {{ form_errors(userCourseForm)}}
+            </div>
+            {# je crée un label issu du formulaire 'userCourseForm' je crée un 'widget' ou input
+            et lui attribue une class
+
+            Ensuite je fais une classe dans le CSS #}
+
+            {#  J'active l'affichage des erreurs avec 'form_errors'
+
+            Ensuite je vais dans mon entité Constraints auquel je mets l'alias Assert
+            dans la base de symfony dans mon Entité course
+
+            Ensuite je créé @Assert et je mets la contrainte que je souhaite afficher #}
+
+            <div> {{ form_label(userCourseForm.date_purchase) }}<br>
+                {{ form_widget(userCourseForm.date_purchase, {'attr': {'class':'input_date'}}) }}
+                {{ form_errors(userCourseForm.maxPerson)}}
+            </div>
+            <div> {{ form_label(userCourseForm.price) }}<br>
+                {{ form_widget(userCourseForm.price, {'attr': {'class':'inputPrice'}}) }}
+                {{ form_errors(userCourseForm.maxPerson)}}
+            </div>
+            {# {% if is_granted("ROLE_CE") %} #}
+            <div>
+                {{ form_label(userCourseForm.price) }}<br>
+                {{ form_widget(userCourseForm.price, {'attr': {'class': 'inputPrice'}}) }}
+                {{ form_errors(userCourseForm.price}}
+            </div>
+            {# {% endif %} #}
+            <div>
+                {{ form_label(userCourseForm.hour_start) }}<br>
+                {{ form_widget(userCourseForm.hour_start, {'attr': {'class': 'input_hour'}}) }}
+                {{ form_errors(userCourseForm.hour_start)}}
+            </div>
+
+            <div>
+                {{ form_label(userCourseForm.hour_end) }}
+                {{ form_widget(userCourseForm.hour_end, {'attr': {'class': 'input_hour'}}) }}
+                {{ form_errors(userCourseForm.hour_end)}}
+            </div>
+            <div> {{ form_label(userCourseForm.submit) }}
+                {{ form_widget(userCourseForm.submit, {'attr': {'class':'inputSubmit'}}) }}</div>
+
+            {{ form_end(userCourseForm) }}
+        </div>
+        <button class="backCenter"><a href="{{ path('user_course') }}">Retour à l'accueil</a></button>
+    {% endblock %}
